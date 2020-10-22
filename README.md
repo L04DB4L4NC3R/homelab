@@ -1,10 +1,10 @@
 ## HomeLab
 A full docker swarm config file for setting up my home lab.
 
-* Chutkulabot Telegram Bot for Jokes
-* PiHole DNS Adblocker
-* Spotify Playlist Sync
-* NextCloud Setup
+* [Chutkulabot Telegram Bot for Jokes](https://github.com/L04DB4L4NC3R/chutkula-bot)
+* [PiHole DNS Adblocker](https://github.com/L04DB4L4NC3R/chutkula-bot)
+* [Music Playlist Sync](https://github.com/spotDL/spotify-downloader)
+* [NextCloud Setup](https://nextcloud.com/)
 
 <br>
 
@@ -20,6 +20,12 @@ curl -sSL get.docker.com | sh
 
 ```sh
 docker swarm init
+```
+
+* Copy and populate environment vars
+
+```sh
+cp sample.env .env
 ```
 
 * Deploy!
