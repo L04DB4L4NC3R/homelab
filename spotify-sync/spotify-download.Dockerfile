@@ -2,7 +2,7 @@ FROM ubuntu
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install -y python3-pip ffmpeg
+RUN apt-get install -y python3-pip
 
 RUN pip3 install spotdl
 
@@ -13,8 +13,6 @@ RUN mkdir /app
 WORKDIR /app
 
 RUN mkdir /app/Music
-
-RUN touch /app/Music/fav-bak.txt
 
 COPY download-music.sh /app/download-music.sh
 
