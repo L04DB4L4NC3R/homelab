@@ -8,24 +8,26 @@ services:
 
   pihole:
     container_name: pihole
+    domainname: docker
+    hostname: pihole
     image: pihole/pihole:latest
+    env_file: ./.env
     ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "67:67/udp"
-      - "80:80/tcp"
-      - "443:443/tcp"
-    environment:
-      TZ: 'Asia/Kolkata' #this is the time zone
+      - '53:53/tcp'
+      - '53:53/udp'
+      # - '67:67/udp'
+      - '80:80'
+      - '443:443'
+    restart: unless-stopped
     volumes:
-       - './etc-pihole/:/etc/pihole/'
-       - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
-    dns:
-      - 127.0.0.1
-      - 1.1.1.1
+      - ${USERDIR}/docker/pihole/pihole:/etc/pihole
+      # - ${USERDIR}/docker/pihole/pihole.log:/var/log/pihole.log
+      - ${USERDIR}/docker/pihole/dnsmasq.d:/etc/dnsmasq.d
     cap_add:
       - NET_ADMIN
-    restart: unless-stopped
+    environment:
+      - DNS1=127.0.0.1
+      - DNS2=1.1.1.1 # cloudflare DNS
     deploy:
             replicas: 1
 
