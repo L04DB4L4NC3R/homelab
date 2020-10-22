@@ -1,13 +1,40 @@
 ## HomeLab
-A full docker swarm config file for setting up my home lab
-
-### Things that run in my home lab
+A full docker swarm config file for setting up my home lab.
 
 * Chutkulabot Telegram Bot for Jokes
 * PiHole DNS Adblocker
 * Spotify Playlist Sync
+* NextCloud Setup
 
-### PiHole on Ubuntu
+<br>
+
+### Installation
+
+* Download docker
+
+```sh
+curl -sSL get.docker.com | sh
+```
+
+* Initialize docker swarm
+
+```sh
+docker swarm init
+```
+
+* Deploy!
+
+```sh
+# HomeLab Main
+docker stack deploy -c docker-stack.yml homelab
+
+# NextCloud Stack
+docker stack deploy -c nextcloud.yml nextcloud
+```
+
+<br>
+
+### Debugging PiHole on Ubuntu
 
 If you want to run pihole in ubuntu then disable the automatic dynamic DNS resolving service:
 
