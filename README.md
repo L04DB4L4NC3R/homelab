@@ -31,11 +31,9 @@ cp sample.env .env
 * Deploy!
 
 ```sh
-# HomeLab Main
-docker stack deploy -c docker-stack.yml homelab
+chmod +x configure.sh
 
-# NextCloud Stack
-docker stack deploy -c nextcloud.yml nextcloud
+./configure.sh
 ```
 
 <br>

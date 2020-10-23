@@ -1,11 +1,5 @@
 version: '3'
 services:
-  bot:
-    env_file: ./.env
-    image: angadsharma1016/chutkulabot
-    deploy:
-            replicas: 1
-
   pihole:
     container_name: pihole
     domainname: docker
@@ -16,7 +10,7 @@ services:
       - '53:53/tcp'
       - '53:53/udp'
       # - '67:67/udp'
-      - '80:80'
+      - '6969:80'
       - '443:443'
     restart: unless-stopped
     volumes:
@@ -32,10 +26,3 @@ services:
             replicas: 1
 
 
-  spotify-download:
-        image: angadsharma1016/spotify-download
-        env_file: ./.env
-        volumes:
-                - ./Music:/app/Music
-        deploy:
-                replicas: 1
