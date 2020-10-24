@@ -1,0 +1,7 @@
+version: '3'
+services:
+  bot:
+    env_file: ./.env
+    image: angadsharma1016/chutkulabot
+    deploy:
+            replicas: 1

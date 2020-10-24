@@ -1,15 +1,9 @@
 version: '3'
 services:
-  bot:
-    env_file: ./.env
-    image: angadsharma1016/chutkulabot
-    deploy:
-            replicas: 1
-
   spotify-download:
         image: angadsharma1016/spotify-download
         env_file: ./.env
         volumes:
-                - ./Music:/app/Music
+                - /mnt/hdd/Music:/app/Music
         deploy:
                 replicas: 1
