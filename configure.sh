@@ -11,4 +11,3 @@ docker stack deploy -c telegram-servers.yml telegram-servers
 
 # Pihole Install
 curl -sSL https://install.pi-hole.net | bash
-
