@@ -1,10 +1,12 @@
 [Unit]
 Description=Port forwarding for ssh
 Requires=network.target
+Wants=sshd.service
 After=network.target
 
 [Service]
 ExecStart=nohup /usr/bin/ssh -N -R 2022:localhost:22 root@bastion &
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
