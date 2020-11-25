@@ -25,6 +25,7 @@ docker swarm init
 * Copy and populate environment vars
 
 ```sh
+cd conf
 cp sample.env .env
 ```
 
