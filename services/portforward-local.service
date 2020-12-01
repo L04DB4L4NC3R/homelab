@@ -1,12 +1,12 @@
 [Unit]
-Description=Port forwarding for ssh
-Requires=network.target
-Wants=sshd.service
+Description=Reverse SSH connection
 After=network.target
 
 [Service]
-ExecStart=nohup /usr/bin/ssh -N -L 2022:localhost:2022 root@bastion &
+Type=simple
+ExecStart=/usr/bin/ssh -vvv -g -N -T -o "ServerAliveInterval 10" -o "ExitOnForwardFailure yes" -L 2022:localhost:2022 root@bastion
 Restart=always
+RestartSec=5s
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
