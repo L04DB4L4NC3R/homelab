@@ -1,0 +1,12 @@
+[Unit]
+Description=Network speed check and report
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/ubuntu/Repos/homelab/scripts/netcheck.sh
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=default.target
