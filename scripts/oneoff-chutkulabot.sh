@@ -1,3 +1,3 @@
 docker rm -f chutkulabot
-source /home/ubuntu/Repos/homelab/.env
+source /home/pi/Repos/homelab/conf/.env
 docker container run --name chutkulabot -d angadsharma1016/chutkulabot:latest

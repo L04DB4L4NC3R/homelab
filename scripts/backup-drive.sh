@@ -6,4 +6,5 @@
 # -v Is verbose and shows progress
 # -z Is for compression during transport
 # -P is for pause and resume ability
-rsync -auvzP /mnt/hdd /mnt/backuphdd
+#rsync -auvzP /mnt/hdd /mnt/backuphdd
+sudo timeshift --create --comments "`date`" --snapshot-device /dev/sda --tags D
