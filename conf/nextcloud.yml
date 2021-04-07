@@ -1,3 +1,5 @@
+# docker run -d -p 4443:4443 -p 443:443 -p 80:80 -v ncdata:/data --name nextcloudpi ownyourbits/nextcloudpi $DOMAIN
+# if architecture is arm/v7 or armhf then run this ^
 version: '3'
 
 services:
