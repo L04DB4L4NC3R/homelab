@@ -1,0 +1,11 @@
+[Unit]
+Description=cloud-torrent
+
+[Service]
+WorkingDirectory=/root/
+ExecStart=/usr/local/bin/cloud-torrent --port 8000 --title "Cloud Torrent" --log --auth "user:password"
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
