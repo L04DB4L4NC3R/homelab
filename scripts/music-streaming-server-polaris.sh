@@ -4,5 +4,5 @@ docker run -t \
   -v /mnt/hdd/Music:/music \
   -v cache:/var/cache/polaris \
   -v data:/var/lib/polaris \
-  angadsharma1016/polaris:latest # for armv8
+  angadsharma1016/polaris:arm64 # for armv8
   #ogarcia/polaris:latest # for x86
