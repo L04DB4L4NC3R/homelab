@@ -7,8 +7,7 @@ services:
     networks:
             - nextcloud
     env_file: ./.env
-              # uncomment if not armhf
-    image: lsioarmhf/mariadb #mariadb
+    image: mariadb
     ports:
             - 3306:3306
               # uncomment if not armhf
