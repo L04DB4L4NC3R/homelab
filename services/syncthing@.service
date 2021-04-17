@@ -1,3 +1,4 @@
+# enable and start with "sudo systemctl enable --now syncthing@<user>"
 [Unit]
 Description=Syncthing - Open Source Continuous File Synchronization for %I
 Documentation=man:syncthing(1)
