@@ -17,6 +17,7 @@ services:
       - /mnt/hdd/nextcloud_db:/var/lib/mysql
     deploy:
             replicas: 1
+    restart: always
 
   app:
     networks:
@@ -31,6 +32,7 @@ services:
         - /mnt/hdd/nextcloud_app:/var/www/html
     deploy:
             replicas: 1
+    restart: always
 
 networks:
         nextcloud:
