@@ -1,0 +1,21 @@
+---
+- name: update and upgrade
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 360
+
+- name: install required packages
+  apt:
+    name: "{{  required_packages  }}"
+    state: presen
+
+- name: install optional packages
+  apt:
+    name: "{{  optional_packages  }}"
+    state: presen
+
+- name: install pip packages
+  pip:
+    name: "{{  pip_packages  }}"
+    state: present

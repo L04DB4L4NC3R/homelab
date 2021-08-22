@@ -1,0 +1,4 @@
+- hosts: rpi
+  become: yes
+  roles:
+    - { role: packages, tags: packages }

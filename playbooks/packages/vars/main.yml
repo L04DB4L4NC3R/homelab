@@ -1,0 +1,12 @@
+required_packages:
+  - python3-pip
+
+optional_packages:
+  - htop
+  - neofetch
+  - tmux
+  - vim
+
+pip_packages:
+  - bpytop
+  - docker-compose
