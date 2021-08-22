@@ -24,7 +24,8 @@
   ansible.builtin.user:
     name: "{{ item.name }}"
     state: present
-    # TODO: password: ""
+    shell: /bin/bash
+    password: "{{ user_password }}"
     groups: "{{ item.groups }}"
   loop:
     - { name: 'angad', groups: 'root' }

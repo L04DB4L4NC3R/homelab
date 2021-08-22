@@ -1,4 +1,4 @@
 .PHONY: push
 
 push:
-	ansible-playbook -i inventory/hosts.ini playbook.yml
+	ansible-playbook --ask-vault-password -i inventory/hosts.ini playbook.yml
