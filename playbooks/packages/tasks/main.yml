@@ -21,13 +21,25 @@
     state: present
 
 - name: install docker
-  shell: /usr/bin/curl -fsSL https://get.docker.com | /bin/bash
+  shell:
+    cmd: /usr/bin/curl -fsSL https://get.docker.com | /bin/bash
+    creates: /usr/bin/docker
+
+- name: ensure docker service is running
+  systemd:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+  loop:
+    - docker.service
+    - containerd.service
 
 - name: user configuration
   user:
     name: "{{ item.name }}"
     state: present
     shell: /bin/bash
+    generate_ssh_key: yes
     password: "{{ user_password }}"
     groups: "{{ item.groups }}"
   loop:
