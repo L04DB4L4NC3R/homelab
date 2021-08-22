@@ -8,12 +8,12 @@
 - name: install required packages
   apt:
     name: "{{  required_packages  }}"
-    state: presen
+    state: present
 
 - name: install optional packages
   apt:
     name: "{{  optional_packages  }}"
-    state: presen
+    state: present
 
 - name: install pip packages
   pip:
