@@ -20,8 +20,11 @@
     name: "{{  pip_packages  }}"
     state: present
 
+- name: install docker
+  shell: /usr/bin/curl -fsSL https://get.docker.com | /bin/bash
+
 - name: user configuration
-  ansible.builtin.user:
+  user:
     name: "{{ item.name }}"
     state: present
     shell: /bin/bash
@@ -30,3 +33,4 @@
   loop:
     - { name: 'angad', groups: 'root' }
     - { name: 'angad', groups: 'docker' }
+
