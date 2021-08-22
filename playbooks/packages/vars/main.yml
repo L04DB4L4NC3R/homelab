@@ -1,5 +1,6 @@
 required_packages:
   - python3-pip
+  - docker-ce
 
 optional_packages:
   - htop

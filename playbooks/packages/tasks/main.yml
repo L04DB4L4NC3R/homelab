@@ -19,3 +19,13 @@
   pip:
     name: "{{  pip_packages  }}"
     state: present
+
+- name: user configuration
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    state: present
+    # TODO: password: ""
+    groups: "{{ item.groups }}"
+  loop:
+    - { name: 'angad', groups: 'root' }
+    - { name: 'angad', groups: 'docker' }
